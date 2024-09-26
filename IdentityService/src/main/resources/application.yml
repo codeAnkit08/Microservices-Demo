@@ -1,0 +1,20 @@
+server:
+  port: 9898
+
+spring:
+  application:
+    name: IDENTITY-SERVICE
+  datasource:
+    url: jdbc:mysql://localhost:3306/microservices
+    username: root
+    password: ankitdb
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    
+  config:
+    import: optional:configserver:http://localhost:8085
+  profiles:
+    active: default
